@@ -1,0 +1,55 @@
+<%= form_with(model: job, local: true) do |form| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+        <% job.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :priority, class: 'form-label' %>
+    <%= form.text_field :priority, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :attempts, class: 'form-label' %>
+    <%= form.text_field :attempts, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :handler, class: 'form-label' %>
+    <%= form.text_field :handler, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :last_error, class: 'form-label' %>
+    <%= form.text_field :last_error, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :run_at, class: 'form-label' %>
+    <%= form.datetime_select :run_at, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :locked_at, class: 'form-label' %>
+    <%= form.datetime_select :locked_at, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :failed_at, class: 'form-label' %>
+    <%= form.datetime_select :failed_at, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :locked_by, class: 'form-label' %>
+    <%= form.text_field :locked_by, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :queue, class: 'form-label' %>
+    <%= form.text_field :queue, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-success" %>
+    <%= link_to 'Cancel', :back, class: "btn btn-secondary" %>
+  </div>
+<% end %>

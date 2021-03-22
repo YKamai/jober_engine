@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h3>All Jobs</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Priority</th>
+      <th>Attempts</th>
+      <th>Handler</th>
+      <th>Last error</th>
+      <th>Run at</th>
+      <th>Locked at</th>
+      <th>Failed at</th>
+      <th>Locked by</th>
+      <th>Queue</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.priority %></td>
+        <td><%= job.attempts %></td>
+        <td><%= job.handler %></td>
+        <td><%= job.last_error %></td>
+        <td><%= job.run_at %></td>
+        <td><%= job.locked_at %></td>
+        <td><%= job.failed_at %></td>
+        <td><%= job.locked_by %></td>
+        <td><%= job.queue %></td>
+        <td><%= link_to 'Show', job, class:"btn btn-info" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'Create Job', new_job_path, class: "btn btn-primary" %>

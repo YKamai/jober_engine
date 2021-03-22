@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @job.priority %>
+</p>
+
+<p>
+  <strong>Attempts:</strong>
+  <%= @job.attempts %>
+</p>
+
+<p>
+  <strong>Handler:</strong>
+  <%= @job.handler %>
+</p>
+
+<p>
+  <strong>Last error:</strong>
+  <%= @job.last_error %>
+</p>
+
+<p>
+  <strong>Run at:</strong>
+  <%= @job.run_at %>
+</p>
+
+<p>
+  <strong>Locked at:</strong>
+  <%= @job.locked_at %>
+</p>
+
+<p>
+  <strong>Failed at:</strong>
+  <%= @job.failed_at %>
+</p>
+
+<p>
+  <strong>Locked by:</strong>
+  <%= @job.locked_by %>
+</p>
+
+<p>
+  <strong>Queue:</strong>
+  <%= @job.queue %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job), class: "btn btn-primary" %>
+<%= link_to 'Destroy', @job, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
